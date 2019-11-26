@@ -22,6 +22,18 @@ const Nav = () => (
           <a href={href}>{label}</a>
         </li>
       ))}
+
+      <li>
+        <Link href="/boo">
+          <a>Boo</a>
+        </Link>
+      </li>
+
+      <li>
+        <Link href="/foo">
+          <a>Foo</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
@@ -32,7 +44,22 @@ const Nav = () => (
       }
       nav {
         text-align: center;
+        background: green;
       }
+
+      /* ATTENTION: Nested media rules */
+      @media (max-width: 1920px) {
+        nav {
+          background: mediumpurple;
+        }
+
+        @media (max-width: 1024px) {
+          nav {
+            background: darkslategrey;
+          }
+        }
+      }
+
       ul {
         display: flex;
         justify-content: space-between;
@@ -45,7 +72,7 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: white;
         text-decoration: none;
         font-size: 13px;
       }
